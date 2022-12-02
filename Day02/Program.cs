@@ -79,6 +79,53 @@ namespace Day02
 
         public int Part2()
         {
+            int totalScore = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                var tokens = input[i].Split(' ');
+                var opponent = tokens[0] == "A" ? 'r' : tokens[0] == "B" ? 'p' : 'c';
+                var response = tokens[1][0];
+                var score = scoreGamePart2(opponent, response);
+
+                //Console.WriteLine(score);
+                totalScore += score;
+            }
+
+            return totalScore;
+        }
+
+        private int scoreGamePart2(char other, char action)
+        {
+            if (action == 'X') // Loose
+            {
+                switch (other)
+                {
+                    case 'r': return 3;
+                    case 'p': return 1;
+                    case 'c': return 2;
+                }
+            } 
+            else if (action == 'Y') // DRAW
+            {
+                switch (other)
+                {
+                    case 'r': return 1+3;
+                    case 'p': return 2+3;
+                    case 'c': return 3+3;
+                }
+
+            }
+            else // WIN
+            {
+                switch (other)
+                {
+                    case 'r': return 2+6;
+                    case 'p': return 3+6;
+                    case 'c': return 1+6;
+                }
+
+            }
+
             return 0;
         }
     }
