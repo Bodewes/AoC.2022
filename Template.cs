@@ -8,7 +8,7 @@ class Program
         var input = File.ReadAllLines("input.txt");
         var solver = new Solution(input);
 
-        Console.WriteLine("Day 02");
+        Console.WriteLine("Day 02" + Environment.NewLine);
         TimeAction<int>(solver.Part1);
         TimeAction<int>(solver.Part2);
 
@@ -20,10 +20,12 @@ class Program
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
-        Console.WriteLine(action());
+        var result = action();
+
+        Console.WriteLine($"Answer = {result}");
 
         sw.Stop();
-        Console.WriteLine($"Took: {sw.Elapsed}");
+        Console.WriteLine($"Took: {sw.Elapsed}" + Environment.NewLine);
     }
 }
 
