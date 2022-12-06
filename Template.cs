@@ -5,7 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        var input = File.ReadAllLines("input.txt");
+        var input = File.ReadAllLines("test.txt");
+        //var input = File.ReadAllLines("input.txt");
+
         var solver = new Solution(input);
 
         Console.WriteLine("Day 02" + Environment.NewLine);
@@ -42,6 +44,7 @@ public class Solution
     {
         return 0;
     }
+
     public int Part2()
     {
         return 0;
