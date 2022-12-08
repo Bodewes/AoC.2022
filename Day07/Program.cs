@@ -12,10 +12,11 @@ namespace Day07
         {
             //var input = File.ReadAllLines("test.txt");
             var input = File.ReadAllLines("input.txt");
+            //var input = File.ReadAllLines("inputFrank.txt");
 
             var solver = new Solution(input);
 
-            Console.WriteLine("Day 02" + Environment.NewLine);
+            Console.WriteLine("Day 07" + Environment.NewLine);
             TimeAction<int>(solver.Part1);
             TimeAction<int>(solver.Part2);
 
@@ -206,6 +207,8 @@ namespace Day07
         }
 
         public int TotalSize => Children.Sum(x => x.TotalSize) + Size;
+
+        public string Fullname => 
     }
 
 
